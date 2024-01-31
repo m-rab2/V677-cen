@@ -17,16 +17,6 @@ flux = tess_data['SAP_FLUX']
 # Create a LightCurve object from the time and flux data
 lc = lk.LightCurve(time=time, flux=flux)
 
-# Plot the light curve with smaller points
 lc.scatter(marker=',', s=1, color='black')
 plt.title('TESS Light Curve for V677 Cen')
 plt.show()
-
-# Compute the Lomb-Scargle periodogram to find potential binary star periods
-frequency, power = LombScargle(lc.time, lc.flux).autopower(method='fast')
-periods = 1 / frequency
-print(periods)
-
-# Find the main peak in the periodogram as the binary star period
-best_period = periods[np.argmax(power)]
-print(f"Best period for binary star: {best_period:.2f} days")
