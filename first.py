@@ -2,7 +2,6 @@ from astropy.io import fits
 import lightkurve as lk
 import numpy as np
 import matplotlib.pyplot as plt
-from astropy.timeseries import LombScargle
 
 fits_file_path = 'v677.fits'
 
